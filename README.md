@@ -10,7 +10,11 @@
 
 ---
 
-**🌐 [Browse the live changelog & library →](https://theholyearthfoundation.github.io/changelog-astro-public/)**
+<strong><i class="ph ph-door-open"></i> <a href="https://theholyearthfoundation.github.io/changelog-astro-public/">Changelog &amp; Library Astro Porch →</a></strong>
+
+<a href="https://theholyearthfoundation.github.io/"><i class="ph ph-arrow-square-out"></i> Entry portal</a> ·
+<a href="https://theholyearthfoundation.github.io/changelog-astro-public/changelog"><i class="ph ph-clock-counter-clockwise"></i> Changelog</a> ·
+<a href="https://theholyearthfoundation.github.io/changelog-astro-public/library"><i class="ph ph-books"></i> Library</a>
 
 ---
 
