@@ -1,0 +1,205 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>The backdrop-filter containing-block bug — Library</title><meta name="description" content="A donate modal rendered pinned to a 64px header instead of the full viewport -- a real CSS gotcha worth knowing."><link rel="icon" href="/changelog-astro-public/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/changelog-astro-public/favicon.png"><link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css"><meta property="og:title" content="The backdrop-filter containing-block bug — Library"><meta property="og:description" content="A donate modal rendered pinned to a 64px header instead of the full viewport -- a real CSS gotcha worth knowing."><meta property="og:image" content="https://theholyearthfoundation.github.io/changelog-astro-public/social-card.jpg"><meta property="og:url" content="https://theholyearthfoundation.github.io/changelog-astro-public/library/backdrop-filter-containing-block-bug"><meta property="og:type" content="website"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="The backdrop-filter containing-block bug — Library"><meta name="twitter:description" content="A donate modal rendered pinned to a 64px header instead of the full viewport -- a real CSS gotcha worth knowing."><meta name="twitter:image" content="https://theholyearthfoundation.github.io/changelog-astro-public/social-card.jpg"><script>
+      (function () {
+        var saved = localStorage.getItem("thef-theme");
+        var theme = saved === "light" || saved === "dark" ? saved : "dark";
+        document.documentElement.dataset.theme = theme;
+      })();
+    </script><style>@import "https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap";:root{--bg:#fdfbf5;--surface:#fff;--ink:#241f14;--ink-soft:#6b6248;--signature:#c99a3a;--signature-2:#a78bfa;--signature-3:#34d399;--signature-4:#7dd3fc;--line:#ece2c9;--font-display:"Space Grotesk", system-ui, sans-serif;--font-mono:"IBM Plex Mono", ui-monospace, "SF Mono", monospace;color-scheme:light}@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#14110a;--surface:#1c1710;--ink:#f5f0e3;--ink-soft:#b8ad91;--signature:#e5c158;--signature-2:#c4b5fd;--signature-3:#6ee7b7;--signature-4:#93c5fd;--line:#2e2718;color-scheme:dark}}:root[data-theme=dark]{--bg:#14110a;--surface:#1c1710;--ink:#f5f0e3;--ink-soft:#b8ad91;--signature:#e5c158;--signature-2:#c4b5fd;--signature-3:#6ee7b7;--signature-4:#93c5fd;--line:#2e2718;color-scheme:dark}*{box-sizing:border-box}html,body{max-width:100vw;margin:0;padding:0;overflow-x:hidden}body{background:var(--bg);color:var(--ink);font-family:var(--font-display)}a{color:var(--signature)}#starfield-canvas[data-astro-cid-dac3vbt4]{z-index:-1;pointer-events:none;position:fixed;inset:0}body{flex-direction:column;min-height:100vh;padding-bottom:96px;display:flex}main{flex:1 0 auto}.site-header{border-bottom:1px solid var(--line);flex-wrap:wrap;justify-content:space-between;align-items:center;gap:.75rem;max-width:780px;margin:0 auto;padding:16px 20px;display:flex}.brand{color:var(--ink);align-items:center;gap:.4rem;font-weight:600;text-decoration:none;display:inline-flex}.brand-home-icon{color:var(--signature);font-size:.9rem}.brand-sep{color:var(--line)}.brand-home-label{color:var(--ink-soft);font-size:.85rem;font-weight:400}.nav-links{flex-wrap:wrap;align-items:center;gap:1.1rem;display:flex}.nav-links a{color:var(--signature);align-items:center;gap:.35rem;font-size:.85rem;text-decoration:none;display:inline-flex}.nav-links a:hover{text-decoration:underline}.theme-toggle{border:1px solid var(--line);background:var(--surface);width:30px;height:30px;color:var(--signature);cursor:pointer;border-radius:999px;justify-content:center;align-items:center;padding:0;display:inline-flex}.theme-icon-light,.theme-icon-dark{font-size:.95rem;display:none}:root[data-theme=dark] .theme-icon-light,:root:not([data-theme=dark]) .theme-icon-dark{display:inline}.universal-footer{z-index:40;-webkit-backdrop-filter:blur(14px);background:color-mix(in srgb, var(--bg) 88%, transparent);border-top:1px solid var(--line);color:var(--ink-soft);font-size:.78rem;font-family:var(--font-mono);padding:10px 20px;position:fixed;bottom:0;left:0;right:0}.footer-inner{text-align:center;flex-wrap:wrap;justify-content:center;align-items:center;gap:4px 18px;max-width:900px;margin:0 auto;display:flex}.footer-inner a{color:var(--ink-soft);align-items:center;gap:.3rem;text-decoration:none;display:inline-flex}.footer-inner a:hover{color:var(--signature)}.footer-brand{color:var(--ink);font-weight:600}
+</style><style>.content-section[data-astro-cid-cx6wmmop]{max-width:760px;margin:0 auto;padding:40px 20px 60px}.back[data-astro-cid-cx6wmmop]{margin:0 0 24px}.back[data-astro-cid-cx6wmmop] a[data-astro-cid-cx6wmmop]{opacity:.7;font-family:monospace;font-size:.85rem;text-decoration:none}.back[data-astro-cid-cx6wmmop] a[data-astro-cid-cx6wmmop]:hover{opacity:1}h1[data-astro-cid-cx6wmmop]{letter-spacing:-.01em;margin:0 0 8px;font-size:1.9rem;font-weight:600}.desc[data-astro-cid-cx6wmmop]{opacity:.7;margin:0 0 32px;font-size:1rem}.prose[data-astro-cid-cx6wmmop] h1{margin:40px 0 16px;font-size:1.6rem}.prose[data-astro-cid-cx6wmmop] h2{margin:32px 0 12px;font-size:1.3rem}.prose[data-astro-cid-cx6wmmop] .tldr{background:color-mix(in srgb, var(--signature) 10%, transparent);border-left:3px solid var(--signature);border-radius:10px;align-items:flex-start;gap:10px;margin:0 0 20px;padding:14px 16px;font-size:.95rem;line-height:1.6;display:flex}.prose[data-astro-cid-cx6wmmop] .tldr .ph{color:var(--signature);flex-shrink:0;margin-top:2px}.prose[data-astro-cid-cx6wmmop] details{border:1px solid var(--line,currentColor);border-radius:10px;margin:4px 0 24px;padding:0 16px}.prose[data-astro-cid-cx6wmmop] details[open]{padding-bottom:16px}.prose[data-astro-cid-cx6wmmop] summary{cursor:pointer;color:var(--signature);align-items:center;gap:8px;padding:14px 0;font-weight:600;display:flex}.prose[data-astro-cid-cx6wmmop] summary::-webkit-details-marker{display:none}.prose[data-astro-cid-cx6wmmop] summary .ph-caret-right{transition:transform .15s}.prose[data-astro-cid-cx6wmmop] details[open] summary .ph-caret-right{transform:rotate(90deg)}.prose[data-astro-cid-cx6wmmop] h3{margin:24px 0 10px;font-size:1.1rem}.prose[data-astro-cid-cx6wmmop] p{margin:0 0 16px;line-height:1.7}.prose[data-astro-cid-cx6wmmop] ul,.prose[data-astro-cid-cx6wmmop] ol{padding-left:1.4em;line-height:1.7}.prose[data-astro-cid-cx6wmmop] code{background:color-mix(in srgb, currentColor 8%, transparent);border-radius:4px;padding:.1em .35em;font-family:ui-monospace,SF Mono,monospace;font-size:.88em}.prose[data-astro-cid-cx6wmmop] pre{background:color-mix(in srgb, currentColor 6%, transparent);border-radius:10px;padding:16px;font-size:.85rem;overflow-x:auto}.prose[data-astro-cid-cx6wmmop] pre code{background:0 0;padding:0}.prose[data-astro-cid-cx6wmmop] hr{border:none;border-top:1px solid var(--line,#ddd);margin:32px 0}.prose[data-astro-cid-cx6wmmop] blockquote{border-left:3px solid var(--signature,currentColor);opacity:.85;margin:0 0 16px;padding:4px 0 4px 16px}
+</style></head><body><canvas id="starfield-canvas" aria-hidden="true" data-astro-cid-dac3vbt4></canvas><script>(function(){const starColor = "#BAE6FD";
+const sparkColor = "#E5C158";
+
+(function () {
+  var canvas = document.getElementById("starfield-canvas");
+  if (!canvas) return;
+  var ctx = canvas.getContext("2d");
+  var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var stars = [];
+  var sparks = [];
+  var mouse = { x: -9999, y: -9999 };
+  var lastMouse = { x: -9999, y: -9999 };
+  var W, H;
+
+  function resize() {
+    W = canvas.width = window.innerWidth;
+    H = canvas.height = window.innerHeight;
+  }
+
+  function initStars() {
+    stars = [];
+    var count = Math.min(140, Math.floor((W * H) / 9000));
+    for (var i = 0; i < count; i++) {
+      stars.push({
+        bx: Math.random() * W,
+        by: Math.random() * H,
+        x: 0,
+        y: 0,
+        r: Math.random() * 1.4 + 0.4,
+        bright: Math.random() < 0.22,
+        phase: Math.random() * Math.PI * 2,
+        speed: 0.4 + Math.random() * 0.6,
+      });
+    }
+  }
+
+  function onResize() {
+    resize();
+    initStars();
+  }
+  window.addEventListener("resize", onResize);
+  resize();
+  initStars();
+
+  var MAGNET_RADIUS = 90;
+
+  function drawSpike(x, y, r) {
+    ctx.save();
+    ctx.translate(x, y);
+    ctx.strokeStyle = starColor;
+    ctx.globalAlpha = 0.55;
+    ctx.lineWidth = 0.6;
+    ctx.beginPath();
+    ctx.moveTo(-r * 2.6, 0);
+    ctx.lineTo(r * 2.6, 0);
+    ctx.moveTo(0, -r * 2.6);
+    ctx.lineTo(0, r * 2.6);
+    ctx.stroke();
+    ctx.restore();
+  }
+
+  function updateStars(t) {
+    for (var i = 0; i < stars.length; i++) {
+      var s = stars[i];
+      var dx = s.bx - mouse.x;
+      var dy = s.by - mouse.y;
+      var dist = Math.sqrt(dx * dx + dy * dy);
+      var tx = s.bx;
+      var ty = s.by;
+      if (dist < MAGNET_RADIUS) {
+        var f = 1 - dist / MAGNET_RADIUS;
+        var push = f * f * 26;
+        var ang = Math.atan2(dy, dx);
+        tx = s.bx + Math.cos(ang) * push;
+        ty = s.by + Math.sin(ang) * push;
+      }
+      s.x += (tx - s.x) * 0.18;
+      s.y += (ty - s.y) * 0.18;
+
+      var twinkle = 0.5 + 0.5 * Math.sin(t * 0.001 * s.speed + s.phase);
+      var alpha = s.bright ? 0.55 + twinkle * 0.45 : 0.22 + twinkle * 0.3;
+      ctx.beginPath();
+      ctx.fillStyle = starColor;
+      ctx.globalAlpha = alpha;
+      ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+      ctx.fill();
+      if (s.bright) drawSpike(s.x, s.y, s.r);
+    }
+    ctx.globalAlpha = 1;
+  }
+
+  function spawnSparks(x, y) {
+    var dx = x - lastMouse.x;
+    var dy = y - lastMouse.y;
+    if (lastMouse.x < -9000) {
+      lastMouse.x = x;
+      lastMouse.y = y;
+      return;
+    }
+    for (var i = 0; i < 2; i++) {
+      if (sparks.length > 80) sparks.shift();
+      var jitter = (Math.random() - 0.5) * 0.6;
+      sparks.push({
+        x: x,
+        y: y,
+        vx: dx * 0.12 + jitter,
+        vy: dy * 0.12 + jitter,
+        life: 1,
+        size: 1 + Math.random() * 1.6,
+      });
+    }
+    lastMouse.x = x;
+    lastMouse.y = y;
+  }
+
+  function updateSparks() {
+    for (var i = sparks.length - 1; i >= 0; i--) {
+      var p = sparks[i];
+      p.x += p.vx;
+      p.y += p.vy;
+      p.vx *= 0.92;
+      p.vy *= 0.92;
+      p.vy += 0.01;
+      p.life -= 0.022;
+      if (p.life <= 0) {
+        sparks.splice(i, 1);
+        continue;
+      }
+      ctx.beginPath();
+      ctx.fillStyle = sparkColor;
+      ctx.globalAlpha = Math.max(p.life, 0);
+      ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+      ctx.fill();
+    }
+    ctx.globalAlpha = 1;
+  }
+
+  window.addEventListener("mousemove", function (e) {
+    mouse.x = e.clientX;
+    mouse.y = e.clientY;
+    spawnSparks(e.clientX, e.clientY);
+  });
+  window.addEventListener("mouseleave", function () {
+    mouse.x = -9999;
+    mouse.y = -9999;
+  });
+
+  function loop(t) {
+    ctx.clearRect(0, 0, W, H);
+    if (!reduced) {
+      updateStars(t || 0);
+      updateSparks();
+    }
+    requestAnimationFrame(loop);
+  }
+  requestAnimationFrame(loop);
+})();
+})();</script><header class="site-header"><a href="/changelog-astro-public/" class="brand"><span class="brand-title">THEF Changelog</span><i class="ph ph-house brand-home-icon"></i><span class="brand-sep">|</span><span class="brand-home-label">Home</span></a><nav class="nav-links"><a href="/changelog-astro-public/changelog"><i class="ph ph-clock-counter-clockwise"></i> Changelog</a><a href="/changelog-astro-public/library"><i class="ph ph-books"></i> Library</a><a href="https://theholyearthfoundation.github.io" target="_blank" rel="noopener"><i class="ph ph-arrow-square-out"></i> GitHub Pages entry portal</a><button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle light/dark mode"><i class="ph ph-sun theme-icon-light"></i><i class="ph ph-moon theme-icon-dark"></i></button></nav></header><main><section class="content-section" data-astro-cid-cx6wmmop><p class="back" data-astro-cid-cx6wmmop><a href="/changelog-astro-public/library" data-astro-cid-cx6wmmop>&larr; All library docs</a></p><h1 data-astro-cid-cx6wmmop>The backdrop-filter containing-block bug</h1><p class="desc" data-astro-cid-cx6wmmop>A donate modal rendered pinned to a 64px header instead of the full viewport -- a real CSS gotcha worth knowing.</p><div class="prose" data-astro-cid-cx6wmmop><div class="tldr"><i class="ph ph-lightbulb"></i> <strong>TL;DR:</strong> Any ancestor with <code>backdrop-filter</code> (or <code>filter</code>/<code>transform</code>) becomes the containing block for its <code>position: fixed</code> descendants -- a donate modal was rendering pinned to a 64px header instead of the full viewport until this was found.</div>
+<details>
+<summary><i class="ph ph-caret-right"></i> Read the full story →</summary>
+<h2 id="the-bug">The bug</h2>
+<p>A donation modal on David Amaringo’s site was supposed to overlay the entire viewport when opened.
+Instead, it rendered as a tiny strip pinned to the site’s 64px-tall header — as if the modal
+believed the header, not the browser window, was the full extent of the page.</p>
+<h2 id="the-real-cause">The real cause</h2>
+<p><code>position: fixed</code> is normally positioned relative to the viewport — that’s the whole point of using
+it for a full-screen modal. But the CSS spec has a lesser-known exception: <strong>any ancestor with a
+non-default <code>backdrop-filter</code>, <code>filter</code>, <code>transform</code>, <code>perspective</code>, or <code>will-change</code> value becomes
+the containing block for its <code>position: fixed</code> descendants</strong>, not the viewport. The site’s header
+used <code>backdrop-filter: blur(...)</code> for its translucent glass effect — and the modal happened to be
+rendered as a DOM descendant of that header. The moment <code>backdrop-filter</code> was present, <code>position: fixed</code> on the modal stopped meaning “relative to the viewport” and started meaning “relative to the
+64px header box” instead.</p>
+<p>Root-caused via <code>getBoundingClientRect()</code> on the modal at runtime — its reported bounding box
+exactly matched the header’s own dimensions, not the viewport’s, which was the concrete confirmation
+this was a containing-block issue rather than a z-index or overflow problem.</p>
+<h2 id="the-fix">The fix</h2>
+<p>A React portal — rendering the modal into a DOM node attached directly to <code>&lt;body&gt;</code>, outside the
+header’s subtree entirely, so no <code>backdrop-filter</code> ancestor sits between the modal and the real
+viewport.</p>
+<h2 id="why-this-is-worth-knowing-generally">Why this is worth knowing generally</h2>
+<p>This exact bug class shows up anywhere a blurred/frosted-glass header or card effect is used
+alongside a fixed-position overlay rendered as its descendant — a very common combination in modern
+UI design. If a “full-screen” fixed element is mysteriously behaving as if the viewport were much
+smaller than it is, check every ancestor for <code>backdrop-filter</code>/<code>filter</code>/<code>transform</code> before assuming
+it’s a z-index or overflow problem.</p>
+</details>
+</div></section></main><footer class="universal-footer"><div class="footer-inner"><span class="footer-brand">The Holy Earth Foundation</span><a href="https://theholyearthfoundation.github.io" target="_blank" rel="noopener"><i class="ph ph-arrow-square-out"></i> Entry portal</a><a href="https://theholyearthfoundation.github.io/404.html" target="_blank" rel="noopener"><i class="ph ph-map-trifold"></i> Lost the trail?</a><a href="https://www.iamoneself.com/about-the-speaker" target="_blank" rel="noopener"><i class="ph ph-chat-circle-text"></i> Reach out</a></div></footer><script>
+      (function () {
+        var btn = document.getElementById("theme-toggle");
+        if (!btn) return;
+        btn.addEventListener("click", function () {
+          var current = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+          document.documentElement.dataset.theme = current;
+          localStorage.setItem("thef-theme", current);
+        });
+      })();
+    </script></body></html>

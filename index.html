@@ -1,0 +1,226 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>The Holy Earth Foundation — Changelog &amp; Library</title><meta name="description" content="A running, public-safe record of what's shipped across The Holy Earth Foundation's sites, plus a library of the technical write-ups behind it."><link rel="icon" href="/changelog-astro-public/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/changelog-astro-public/favicon.png"><link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css"><meta property="og:title" content="The Holy Earth Foundation — Changelog &amp; Library"><meta property="og:description" content="A running, public-safe record of what's shipped across The Holy Earth Foundation's sites, plus a library of the technical write-ups behind it."><meta property="og:image" content="https://theholyearthfoundation.github.io/changelog-astro-public/social-card.jpg"><meta property="og:url" content="https://theholyearthfoundation.github.io/changelog-astro-public"><meta property="og:type" content="website"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="The Holy Earth Foundation — Changelog &amp; Library"><meta name="twitter:description" content="A running, public-safe record of what's shipped across The Holy Earth Foundation's sites, plus a library of the technical write-ups behind it."><meta name="twitter:image" content="https://theholyearthfoundation.github.io/changelog-astro-public/social-card.jpg"><script>
+      (function () {
+        var saved = localStorage.getItem("thef-theme");
+        var theme = saved === "light" || saved === "dark" ? saved : "dark";
+        document.documentElement.dataset.theme = theme;
+      })();
+    </script><style>@import "https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap";:root{--bg:#fdfbf5;--surface:#fff;--ink:#241f14;--ink-soft:#6b6248;--signature:#c99a3a;--signature-2:#a78bfa;--signature-3:#34d399;--signature-4:#7dd3fc;--line:#ece2c9;--font-display:"Space Grotesk", system-ui, sans-serif;--font-mono:"IBM Plex Mono", ui-monospace, "SF Mono", monospace;color-scheme:light}@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#14110a;--surface:#1c1710;--ink:#f5f0e3;--ink-soft:#b8ad91;--signature:#e5c158;--signature-2:#c4b5fd;--signature-3:#6ee7b7;--signature-4:#93c5fd;--line:#2e2718;color-scheme:dark}}:root[data-theme=dark]{--bg:#14110a;--surface:#1c1710;--ink:#f5f0e3;--ink-soft:#b8ad91;--signature:#e5c158;--signature-2:#c4b5fd;--signature-3:#6ee7b7;--signature-4:#93c5fd;--line:#2e2718;color-scheme:dark}*{box-sizing:border-box}html,body{max-width:100vw;margin:0;padding:0;overflow-x:hidden}body{background:var(--bg);color:var(--ink);font-family:var(--font-display)}a{color:var(--signature)}#starfield-canvas[data-astro-cid-dac3vbt4]{z-index:-1;pointer-events:none;position:fixed;inset:0}body{flex-direction:column;min-height:100vh;padding-bottom:96px;display:flex}main{flex:1 0 auto}.site-header{border-bottom:1px solid var(--line);flex-wrap:wrap;justify-content:space-between;align-items:center;gap:.75rem;max-width:780px;margin:0 auto;padding:16px 20px;display:flex}.brand{color:var(--ink);align-items:center;gap:.4rem;font-weight:600;text-decoration:none;display:inline-flex}.brand-home-icon{color:var(--signature);font-size:.9rem}.brand-sep{color:var(--line)}.brand-home-label{color:var(--ink-soft);font-size:.85rem;font-weight:400}.nav-links{flex-wrap:wrap;align-items:center;gap:1.1rem;display:flex}.nav-links a{color:var(--signature);align-items:center;gap:.35rem;font-size:.85rem;text-decoration:none;display:inline-flex}.nav-links a:hover{text-decoration:underline}.theme-toggle{border:1px solid var(--line);background:var(--surface);width:30px;height:30px;color:var(--signature);cursor:pointer;border-radius:999px;justify-content:center;align-items:center;padding:0;display:inline-flex}.theme-icon-light,.theme-icon-dark{font-size:.95rem;display:none}:root[data-theme=dark] .theme-icon-light,:root:not([data-theme=dark]) .theme-icon-dark{display:inline}.universal-footer{z-index:40;-webkit-backdrop-filter:blur(14px);background:color-mix(in srgb, var(--bg) 88%, transparent);border-top:1px solid var(--line);color:var(--ink-soft);font-size:.78rem;font-family:var(--font-mono);padding:10px 20px;position:fixed;bottom:0;left:0;right:0}.footer-inner{text-align:center;flex-wrap:wrap;justify-content:center;align-items:center;gap:4px 18px;max-width:900px;margin:0 auto;display:flex}.footer-inner a{color:var(--ink-soft);align-items:center;gap:.3rem;text-decoration:none;display:inline-flex}.footer-inner a:hover{color:var(--signature)}.footer-brand{color:var(--ink);font-weight:600}
+</style><style>.content-section[data-astro-cid-lcdefpme]{max-width:680px;margin:0 auto;padding:48px 20px 60px}.readme[data-astro-cid-lcdefpme] h1{letter-spacing:-.01em;margin:0 0 8px;font-size:2.1rem;font-weight:700}.readme[data-astro-cid-lcdefpme] h2{margin:36px 0 12px;font-size:1.35rem}.readme[data-astro-cid-lcdefpme] h3{margin:24px 0 10px;font-size:1.1rem}.readme[data-astro-cid-lcdefpme] p{margin:0 0 16px;line-height:1.7}.readme[data-astro-cid-lcdefpme] blockquote{border-left:3px solid var(--signature,var(--accent));opacity:.85;margin:0 0 20px;padding:4px 0 4px 16px;font-size:1.05rem}.readme[data-astro-cid-lcdefpme] ul,.readme[data-astro-cid-lcdefpme] ol{padding-left:1.4em;line-height:1.7}.readme[data-astro-cid-lcdefpme] code{background:color-mix(in srgb, currentColor 8%, transparent);border-radius:4px;padding:.1em .35em;font-family:ui-monospace,SF Mono,monospace;font-size:.9em}.readme[data-astro-cid-lcdefpme] pre{background:color-mix(in srgb, currentColor 6%, transparent);border-radius:10px;padding:16px;overflow-x:auto}.readme[data-astro-cid-lcdefpme] pre code{background:0 0;padding:0}.readme[data-astro-cid-lcdefpme] hr{border:none;border-top:1px solid var(--line,#ddd);margin:32px 0}.readme[data-astro-cid-lcdefpme] img{border-radius:6px;max-width:100%}.readme[data-astro-cid-lcdefpme] table{border-collapse:collapse;width:100%;margin:0 0 20px;font-size:.9rem}.readme[data-astro-cid-lcdefpme] th,.readme[data-astro-cid-lcdefpme] td{text-align:left;border-bottom:1px solid var(--line,#ddd);padding:8px 10px}
+</style></head><body><canvas id="starfield-canvas" aria-hidden="true" data-astro-cid-dac3vbt4></canvas><script>(function(){const starColor = "#BAE6FD";
+const sparkColor = "#E5C158";
+
+(function () {
+  var canvas = document.getElementById("starfield-canvas");
+  if (!canvas) return;
+  var ctx = canvas.getContext("2d");
+  var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var stars = [];
+  var sparks = [];
+  var mouse = { x: -9999, y: -9999 };
+  var lastMouse = { x: -9999, y: -9999 };
+  var W, H;
+
+  function resize() {
+    W = canvas.width = window.innerWidth;
+    H = canvas.height = window.innerHeight;
+  }
+
+  function initStars() {
+    stars = [];
+    var count = Math.min(140, Math.floor((W * H) / 9000));
+    for (var i = 0; i < count; i++) {
+      stars.push({
+        bx: Math.random() * W,
+        by: Math.random() * H,
+        x: 0,
+        y: 0,
+        r: Math.random() * 1.4 + 0.4,
+        bright: Math.random() < 0.22,
+        phase: Math.random() * Math.PI * 2,
+        speed: 0.4 + Math.random() * 0.6,
+      });
+    }
+  }
+
+  function onResize() {
+    resize();
+    initStars();
+  }
+  window.addEventListener("resize", onResize);
+  resize();
+  initStars();
+
+  var MAGNET_RADIUS = 90;
+
+  function drawSpike(x, y, r) {
+    ctx.save();
+    ctx.translate(x, y);
+    ctx.strokeStyle = starColor;
+    ctx.globalAlpha = 0.55;
+    ctx.lineWidth = 0.6;
+    ctx.beginPath();
+    ctx.moveTo(-r * 2.6, 0);
+    ctx.lineTo(r * 2.6, 0);
+    ctx.moveTo(0, -r * 2.6);
+    ctx.lineTo(0, r * 2.6);
+    ctx.stroke();
+    ctx.restore();
+  }
+
+  function updateStars(t) {
+    for (var i = 0; i < stars.length; i++) {
+      var s = stars[i];
+      var dx = s.bx - mouse.x;
+      var dy = s.by - mouse.y;
+      var dist = Math.sqrt(dx * dx + dy * dy);
+      var tx = s.bx;
+      var ty = s.by;
+      if (dist < MAGNET_RADIUS) {
+        var f = 1 - dist / MAGNET_RADIUS;
+        var push = f * f * 26;
+        var ang = Math.atan2(dy, dx);
+        tx = s.bx + Math.cos(ang) * push;
+        ty = s.by + Math.sin(ang) * push;
+      }
+      s.x += (tx - s.x) * 0.18;
+      s.y += (ty - s.y) * 0.18;
+
+      var twinkle = 0.5 + 0.5 * Math.sin(t * 0.001 * s.speed + s.phase);
+      var alpha = s.bright ? 0.55 + twinkle * 0.45 : 0.22 + twinkle * 0.3;
+      ctx.beginPath();
+      ctx.fillStyle = starColor;
+      ctx.globalAlpha = alpha;
+      ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+      ctx.fill();
+      if (s.bright) drawSpike(s.x, s.y, s.r);
+    }
+    ctx.globalAlpha = 1;
+  }
+
+  function spawnSparks(x, y) {
+    var dx = x - lastMouse.x;
+    var dy = y - lastMouse.y;
+    if (lastMouse.x < -9000) {
+      lastMouse.x = x;
+      lastMouse.y = y;
+      return;
+    }
+    for (var i = 0; i < 2; i++) {
+      if (sparks.length > 80) sparks.shift();
+      var jitter = (Math.random() - 0.5) * 0.6;
+      sparks.push({
+        x: x,
+        y: y,
+        vx: dx * 0.12 + jitter,
+        vy: dy * 0.12 + jitter,
+        life: 1,
+        size: 1 + Math.random() * 1.6,
+      });
+    }
+    lastMouse.x = x;
+    lastMouse.y = y;
+  }
+
+  function updateSparks() {
+    for (var i = sparks.length - 1; i >= 0; i--) {
+      var p = sparks[i];
+      p.x += p.vx;
+      p.y += p.vy;
+      p.vx *= 0.92;
+      p.vy *= 0.92;
+      p.vy += 0.01;
+      p.life -= 0.022;
+      if (p.life <= 0) {
+        sparks.splice(i, 1);
+        continue;
+      }
+      ctx.beginPath();
+      ctx.fillStyle = sparkColor;
+      ctx.globalAlpha = Math.max(p.life, 0);
+      ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+      ctx.fill();
+    }
+    ctx.globalAlpha = 1;
+  }
+
+  window.addEventListener("mousemove", function (e) {
+    mouse.x = e.clientX;
+    mouse.y = e.clientY;
+    spawnSparks(e.clientX, e.clientY);
+  });
+  window.addEventListener("mouseleave", function () {
+    mouse.x = -9999;
+    mouse.y = -9999;
+  });
+
+  function loop(t) {
+    ctx.clearRect(0, 0, W, H);
+    if (!reduced) {
+      updateStars(t || 0);
+      updateSparks();
+    }
+    requestAnimationFrame(loop);
+  }
+  requestAnimationFrame(loop);
+})();
+})();</script><header class="site-header"><a href="/changelog-astro-public/" class="brand"><span class="brand-title">THEF Changelog</span><i class="ph ph-house brand-home-icon"></i><span class="brand-sep">|</span><span class="brand-home-label">Home</span></a><nav class="nav-links"><a href="/changelog-astro-public/changelog"><i class="ph ph-clock-counter-clockwise"></i> Changelog</a><a href="/changelog-astro-public/library"><i class="ph ph-books"></i> Library</a><a href="https://theholyearthfoundation.github.io" target="_blank" rel="noopener"><i class="ph ph-arrow-square-out"></i> GitHub Pages entry portal</a><button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle light/dark mode"><i class="ph ph-sun theme-icon-light"></i><i class="ph ph-moon theme-icon-dark"></i></button></nav></header><main><section class="content-section readme" data-astro-cid-lcdefpme><h1 id="-the-holy-earth-foundation--changelog--library">🌎 The Holy Earth Foundation — Changelog &amp; Library</h1>
+<blockquote>
+<p>A running, public-safe record of what’s shipped across The Holy Earth Foundation’s sites — plus a
+growing library of the deeper technical write-ups behind it.</p>
+</blockquote>
+<p><a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-lightgrey?style=flat" alt="License: MIT"></a>
+<a href="https://theholyearthfoundation.github.io/changelog-astro-public/"><img src="https://img.shields.io/badge/%F0%9F%8C%90%20Live-changelog--astro--public-C99A3A" alt="Live Site"></a>
+<a href="https://github.com/theholyearthfoundation/changelog-astro/actions/workflows/sync-public.yml"><img src="https://github.com/theholyearthfoundation/changelog-astro/actions/workflows/sync-public.yml/badge.svg" alt="Sync"></a>
+<a href="https://code.claude.com/docs/en/overview"><img src="https://img.shields.io/badge/Built%20with-Claude%20Code%20CLI-blueviolet" alt="Built with Claude Code"></a></p>
+<hr>
+<p><strong><i class="ph ph-door-open"></i> <a href="https://theholyearthfoundation.github.io/changelog-astro-public/">Changelog &amp; Library Astro Porch →</a></strong></p>
+<p><a href="https://theholyearthfoundation.github.io/"><i class="ph ph-arrow-square-out"></i> Entry portal</a> ·
+<a href="https://theholyearthfoundation.github.io/changelog-astro-public/changelog"><i class="ph ph-clock-counter-clockwise"></i> Changelog</a> ·
+<a href="https://theholyearthfoundation.github.io/changelog-astro-public/library"><i class="ph ph-books"></i> Library</a></p>
+<hr>
+<h2 id="-what-this-is">👋 What this is</h2>
+<p>Private source for the foundation’s public changelog — a plain-language, dated record of what’s
+shipped across <a href="https://www.iamoneself.com">iamoneself.com</a> and David Amaringo’s site, plus a
+<code>/library</code> of deeper technical write-ups for anyone curious how it’s all built. Written for someone
+outside the foundation who cares about the work, not for the team who already knows the context.</p>
+<p>This README is also rendered as the live site’s own homepage.</p>
+<h2 id="️-whats-here">🗂️ What’s here</h2>
+<ul>
+<li><code>changelog/</code> — one markdown file per entry, <code>YYYY-MM-DD-short-slug.md</code>.</li>
+<li><code>library/</code> — deeper, standalone technical docs that don’t belong to one changelog entry.</li>
+<li><code>astro/</code> — the Astro site itself.</li>
+<li><code>.github/workflows/sync-public.yml</code> — builds and syncs the compiled site (no source) to
+<a href="https://github.com/theholyearthfoundation/changelog-astro-public"><code>theholyearthfoundation/changelog-astro-public</code></a>
+on every push to <code>main</code>.</li>
+</ul>
+<p>Built on the fleet-wide pattern documented at <code>my-template/changelog-template/README.md</code> — read
+that first, it’s the actual spec (frontmatter schema, the confirmed-done-goes-straight-to-changelog
+convention, the org-vs-personal push-target rule).</p>
+<h2 id="️-adding-an-entry">✍️ Adding an entry</h2>
+<p>New file in <code>changelog/</code>, filename <code>YYYY-MM-DD-short-slug.md</code>:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="yaml"><code><span class="line"><span style="color:#B392F0">---</span></span>
+<span class="line"><span style="color:#85E89D">title</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Plain-language title"</span></span>
+<span class="line"><span style="color:#85E89D">date</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"YYYY-MM-DD"</span></span>
+<span class="line"><span style="color:#85E89D">priority</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"P1-high"</span><span style="color:#6A737D"> # or P2-medium (default), P3-low</span></span>
+<span class="line"><span style="color:#85E89D">repo</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"iamoneself"</span><span style="color:#6A737D"> # which project this entry belongs to</span></span>
+<span class="line"><span style="color:#B392F0">---</span></span></code></pre>
+<p>If something can’t be described publicly, it just doesn’t get an entry — the private technical
+record (each site’s own <code>PENDING-TASKS.md</code>/<code>AGENT-SYNC</code> docs) stays exactly where it already is.</p>
+<h2 id="-local-development">💻 Local development</h2>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="sh"><code><span class="line"><span style="color:#79B8FF">cd</span><span style="color:#9ECBFF"> astro</span></span>
+<span class="line"><span style="color:#B392F0">npm</span><span style="color:#9ECBFF"> install</span></span>
+<span class="line"><span style="color:#B392F0">npm</span><span style="color:#9ECBFF"> run</span><span style="color:#9ECBFF"> dev</span></span></code></pre>
+<hr>
+<p><em>Maintained by <a href="https://github.com/theholyearthfoundation">theholyearthfoundation</a> · w/ Anthropic’s Claude Code CLI</em></p>
+<p>Co-Authored-By: Alfred · ClaudeCodeCLI · Anthropic [Sonnet-5]</p>
+</section></main><footer class="universal-footer"><div class="footer-inner"><span class="footer-brand">The Holy Earth Foundation</span><a href="https://theholyearthfoundation.github.io" target="_blank" rel="noopener"><i class="ph ph-arrow-square-out"></i> Entry portal</a><a href="https://theholyearthfoundation.github.io/404.html" target="_blank" rel="noopener"><i class="ph ph-map-trifold"></i> Lost the trail?</a><a href="https://www.iamoneself.com/about-the-speaker" target="_blank" rel="noopener"><i class="ph ph-chat-circle-text"></i> Reach out</a></div></footer><script>
+      (function () {
+        var btn = document.getElementById("theme-toggle");
+        if (!btn) return;
+        btn.addEventListener("click", function () {
+          var current = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+          document.documentElement.dataset.theme = current;
+          localStorage.setItem("thef-theme", current);
+        });
+      })();
+    </script></body></html>
