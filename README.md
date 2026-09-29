@@ -5,7 +5,7 @@
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-lightgrey?style=flat)](LICENSE)
 [![Live Site](https://img.shields.io/badge/%F0%9F%8C%90%20Live-changelog--astro--public-C99A3A)](https://theholyearthfoundation.github.io/changelog-astro-public/)
-[![Sync](https://github.com/theholyearthfoundation/changelog-astro/actions/workflows/sync-public.yml/badge.svg)](https://github.com/theholyearthfoundation/changelog-astro/actions/workflows/sync-public.yml)
+![Sync: automated](https://img.shields.io/badge/sync-automated-C99A3A)
 [![Built with Claude Code](https://img.shields.io/badge/Built%20with-Claude%20Code%20CLI-blueviolet)](https://code.claude.com/docs/en/overview)
 
 ---
