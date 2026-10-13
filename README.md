@@ -14,7 +14,13 @@
 
 <a href="https://theholyearthfoundation.github.io/"><i class="ph ph-arrow-square-out"></i> Entry portal</a> ·
 <a href="https://theholyearthfoundation.github.io/changelog-astro-public/changelog"><i class="ph ph-clock-counter-clockwise"></i> Changelog</a> ·
-<a href="https://theholyearthfoundation.github.io/changelog-astro-public/library"><i class="ph ph-books"></i> Library</a>
+<a href="https://theholyearthfoundation.github.io/changelog-astro-public/teachings"><i class="ph ph-flower-lotus"></i> Teachings</a> ·
+<a href="https://theholyearthfoundation.github.io/changelog-astro-public/library"><i class="ph ph-books"></i> Library</a> ·
+<a href="https://theholyearthfoundation.github.io/changelog-astro-public/ledger"><i class="ph ph-scroll"></i> Ledger</a> ·
+<a href="https://theholyearthfoundation.github.io/changelog-astro-public/map"><i class="ph ph-map-trifold"></i> Map</a> ·
+<a href="https://theholyearthfoundation.github.io/changelog-astro-public/roadmap"><i class="ph ph-path"></i> Roadmap</a> ·
+<a href="https://theholyearthfoundation.github.io/changelog-astro-public/sustainability"><i class="ph ph-plant"></i> Sustainability</a> ·
+<a href="https://theholyearthfoundation.github.io/donate/"><i class="ph ph-heart"></i> Donate</a>
 
 ---
 
@@ -31,9 +37,11 @@ This README is also rendered as the live site's own homepage.
 
 - `changelog/` — one markdown file per entry, `YYYY-MM-DD-short-slug.md`.
 - `library/` — deeper, standalone technical docs that don't belong to one changelog entry.
-- `teachings/` — a teacher's own material, in a room of its own (today, Isaiah Kenney's Plants &
+- `teachings/` — a teacher's own material, in a room of its own (today, Kenney's Plants &
   Miracles, quoted exactly as printed). Served at `/teachings`; see `LICENSE-CONTENT` for its terms.
 - `astro/` — the Astro site itself.
+- `ROADMAP.md` and `SUSTAINABILITY.md` — where this is headed, and what keeps it running. Each is
+  also a page on the site (`/roadmap`, `/sustainability`).
 - `.github/workflows/sync-public.yml` — builds and syncs the compiled site (no source) to
   [`theholyearthfoundation/changelog-astro-public`](https://github.com/theholyearthfoundation/changelog-astro-public)
   on every push to `main`.
@@ -52,6 +60,7 @@ title: "Plain-language title"
 date: "YYYY-MM-DD"
 priority: "P1-high" # or P2-medium (default), P3-low
 repo: "iamoneself" # which project this entry belongs to
+who: "Christopher W" # first name + last initial; see PEOPLE in astro/src/lib/people.ts
 ---
 ```
 
