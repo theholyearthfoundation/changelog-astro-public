@@ -31,6 +31,8 @@ This README is also rendered as the live site's own homepage.
 
 - `changelog/` — one markdown file per entry, `YYYY-MM-DD-short-slug.md`.
 - `library/` — deeper, standalone technical docs that don't belong to one changelog entry.
+- `teachings/` — a teacher's own material, in a room of its own (today, Isaiah Kenney's Plants &
+  Miracles, quoted exactly as printed). Served at `/teachings`; see `LICENSE-CONTENT` for its terms.
 - `astro/` — the Astro site itself.
 - `.github/workflows/sync-public.yml` — builds and syncs the compiled site (no source) to
   [`theholyearthfoundation/changelog-astro-public`](https://github.com/theholyearthfoundation/changelog-astro-public)

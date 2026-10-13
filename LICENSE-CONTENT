@@ -21,4 +21,9 @@ Carve-out: Isaiah Kenney's teaching material
 --------------------------------------------
 The "Plants and Miracles / Flight of the Eagle and the Condor" teaching material is
 (c) Isaiah Kenney. It is shared with permission and is NOT covered by this
-repository's licenses until he chooses his own terms. In this repository that means the "Plants and Miracles" series in `library/` (the `plants-and-miracles*.md` articles) and any text reproduced from it.
+repository's licenses until he chooses his own terms. In this repository that means the "Plants and Miracles" series in `teachings/` (the
+`plants-and-miracles*.md` pages, published at /changelog-astro-public/teachings/plants-and-miracles*),
+the images taken from his flyer (`astro/public/plants-and-miracles/`) and the teaching pages'
+preview cards built from them, and any text reproduced from it. The series lived in `library/`
+until 2026-10-12; the old /changelog-astro-public/library/plants-and-miracles* addresses now
+redirect to Teachings and carry the same carve-out.
