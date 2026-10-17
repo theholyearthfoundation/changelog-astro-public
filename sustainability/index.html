@@ -1,0 +1,117 @@
+<!DOCTYPE html><html lang="en" data-arrival-site="astrolog"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Sustainability — THEF AstroLog</title><meta name="description" content="What it takes to keep The Holy Earth Foundation's GitHub pages running: the tokens, the scheduled jobs, a shared kit and cached previews, and what to do for each."><meta name="theme-color" content="#0f2420"><link rel="icon" href="/changelog-astro-public/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/changelog-astro-public/favicon.png"><link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css"><!-- Link previews (WhatsApp, iMessage, Telegram…): every URL absolute, a real JPEG. --><link rel="canonical" href="https://theholyearthfoundation.github.io/changelog-astro-public/sustainability"><meta property="og:site_name" content="THEF AstroLog"><meta property="og:type" content="website"><meta property="og:url" content="https://theholyearthfoundation.github.io/changelog-astro-public/sustainability"><meta property="og:title" content="Sustainability — THEF AstroLog"><meta property="og:description" content="What it takes to keep The Holy Earth Foundation's GitHub pages running: the tokens, the scheduled jobs, a shared kit and cached previews, and what to do for each."><meta property="og:image" content="https://theholyearthfoundation.github.io/changelog-astro-public/og/page/sustainability.jpg"><meta property="og:image:type" content="image/jpeg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="The Holy Earth Foundation's sustainability notes: what keeps these pages running, beside the twin vine."><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Sustainability — THEF AstroLog"><meta name="twitter:description" content="What it takes to keep The Holy Earth Foundation's GitHub pages running: the tokens, the scheduled jobs, a shared kit and cached previews, and what to do for each."><meta name="twitter:image" content="https://theholyearthfoundation.github.io/changelog-astro-public/og/page/sustainability.jpg"><meta name="twitter:image:alt" content="The Holy Earth Foundation's sustainability notes: what keeps these pages running, beside the twin vine."><!-- THEF's arrival kit, served from the entry portal. Load order matters: kit CSS, THEF's kit CSS
+         (the palette), then ours (imported above, so Astro injects it after these links). The scripts
+         stay in <head>, not deferred, so the visitor's choices apply before first paint. --><link rel="stylesheet" href="https://theholyearthfoundation.github.io/arrival/arrival.css"><link rel="stylesheet" href="https://theholyearthfoundation.github.io/arrival/org.css"><script src="https://theholyearthfoundation.github.io/arrival/org.js"></script><script src="https://theholyearthfoundation.github.io/arrival/arrival.js"></script><link rel="stylesheet" href="/changelog-astro-public/_astro/Base.DAL6MHsM.css"><style>.repo-doc[data-astro-cid-2rvo52bu]{max-width:46rem;margin:0 auto;padding:2.75rem 1.25rem 3rem}.repo-doc[data-astro-cid-2rvo52bu] h1{margin:0 0 1rem;font-size:clamp(2.1rem,5vw,2.6rem);line-height:1.1}.repo-doc[data-astro-cid-2rvo52bu] table{border-collapse:collapse;width:100%;margin:0 0 1.25rem;font-size:.92rem;display:block;overflow-x:auto}.repo-doc[data-astro-cid-2rvo52bu] th,.repo-doc[data-astro-cid-2rvo52bu] td{text-align:left;vertical-align:top;border-bottom:1px solid var(--border);padding:.55rem .65rem}.repo-doc[data-astro-cid-2rvo52bu] h3{margin-top:2rem}.repo-doc[data-astro-cid-2rvo52bu] .prose{background:color-mix(in srgb, var(--background) 72%, transparent)}
+</style></head><body><a class="skip" href="#main">Skip to content</a><canvas id="starfield-canvas" aria-hidden="true"></canvas><!-- One row at every width: the brand, the kit's navbar (from org.js: it folds into "More", then a
+         Menu button below 1100px, rather than wrapping) and the kit's tools. --><header class="site-header"><div class="header-inner"><a href="/changelog-astro-public/" class="brand" aria-label="THEF AstroLog, porch"><img src="/changelog-astro-public/favicon.svg" alt="" class="brand-favicon" width="30" height="30"><span class="brand-title arr-brand-text">THEF<span class="brand-log"> AstroLog</span></span></a><arrival-nav current="sustainability"></arrival-nav><arrival-controls></arrival-controls></div></header><main id="main"><section class="repo-doc" data-astro-cid-2rvo52bu><div class="prose" data-astro-cid-2rvo52bu><h1 id="-sustainability-what-keeps-these-pages-running">🌱 Sustainability: what keeps these pages running</h1>
+<div class="tldr"><i class="ph ph-plant"></i> <span><strong>TL;DR:</strong> Nothing here costs money. What keeps it alive is a short list of things that quietly expire or drift: one publishing token, a ledger token still to be added, two scheduled jobs, a vendored kit, cached link previews, and (later) a wallet allowlist. Each is written down below, with what to do when it needs attention.</span></div>
+<p>The Holy Earth Foundation’s GitHub home is two public sites built from three repositories. This page
+lists what each one needs, so none of it depends on anyone’s memory. It’s also the repository’s
+<code>SUSTAINABILITY.md</code>, so it reads the same on GitHub.</p>
+<h2 id="the-pieces">The pieces</h2>
+<table>
+<thead>
+<tr>
+<th>Repository</th>
+<th>What it is</th>
+<th>How it goes live</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/theholyearthfoundation/theholyearthfoundation.github.io"><code>theholyearthfoundation.github.io</code></a> (public)</td>
+<td>The entry portal: <code>/</code>, <code>/donate/</code>, <code>/map/</code>, the 404, the <code>/plants-and-miracles/</code> short link, and the <strong>arrival kit</strong> every page loads</td>
+<td>GitHub Pages, straight from <code>main</code></td>
+</tr>
+<tr>
+<td><code>changelog-astro</code> (private)</td>
+<td>The source of this AstroLog: entries, write-ups, Kenney’s Teachings, the Astro site</td>
+<td>A workflow builds it and publishes <strong>only the finished pages</strong></td>
+</tr>
+<tr>
+<td><a href="https://github.com/theholyearthfoundation/changelog-astro-public"><code>changelog-astro-public</code></a> (public)</td>
+<td>The built AstroLog you’re reading</td>
+<td>GitHub Pages, from what the workflow pushes</td>
+</tr>
+</tbody>
+</table>
+<h2 id="what-can-quietly-stop-and-what-to-do">What can quietly stop, and what to do</h2>
+<h3 id="-the-publishing-token-public_repo_token">🔑 The publishing token (<code>PUBLIC_REPO_TOKEN</code>)</h3>
+<p>The AstroLog is published by a workflow in the private source repository, which pushes the finished
+pages into <code>changelog-astro-public</code> with a <strong>classic personal access token</strong> stored as the secret
+<code>PUBLIC_REPO_TOKEN</code> (set on 2026-10-05). Classic tokens expire. When it does, <strong>the site stops
+updating without any visible sign on the site itself</strong>: new entries, the daily ledger and every fix
+simply stop arriving, and the pages keep showing the last good build.</p>
+<p><em>What to do:</em> look up its expiry date (GitHub → Settings → Developer settings → Personal access
+tokens) and put a reminder a week before it. To renew, make a new classic token with the <code>repo</code> and
+<code>workflow</code> scopes, paste it into <code>changelog-astro</code> → Settings → Secrets → Actions →
+<code>PUBLIC_REPO_TOKEN</code>, then run the workflow by hand once (Actions → Sync Public Changelog → Run
+workflow) and check that the <a href="https://theholyearthfoundation.github.io/changelog-astro-public/changelog">changelog</a> shows the newest entry.</p>
+<h3 id="️-the-ledgers-reading-token-ledger_token-not-set-yet">🗝️ The ledger’s reading token (<code>LEDGER_TOKEN</code>): not set yet</h3>
+<p>The <a href="https://theholyearthfoundation.github.io/changelog-astro-public/ledger">ledger</a> also shows the
+foundation’s private work, masked: which repository, which day and what kind of change, never the
+words. To read the private repositories it needs a token that can. The publishing token can’t read
+them, so for now the ledger reads this repository with the workflow’s own token, and the other
+private rows carry over, still masked, from the last committed snapshot. The page keeps its shape;
+it just stops adding new private rows from elsewhere.</p>
+<p><em>What to do (Christopher’s to-do):</em> make a <strong>fine-grained</strong> token, resource owner
+<code>theholyearthfoundation</code>, with <strong>read-only “Contents”</strong> on the private repositories the ledger lists
+(<code>astro/src/data/ledger.config.mjs</code> → <code>private</code>), and add it to <code>changelog-astro</code> → Settings → Secrets →
+Actions as <code>LEDGER_TOKEN</code>. The workflow prefers it over <code>PUBLIC_REPO_TOKEN</code> as soon as it exists.
+It expires like any token: renew it the same way.</p>
+<h3 id="️-the-daily-ledger-rebuild">🗓️ The daily ledger rebuild</h3>
+<p>So the ledger stays fresh on days nothing else changes, the publishing workflow also runs <strong>every
+day at 10:29 UTC</strong> (<code>cron: "29 10 * * *"</code>). It uses a few minutes of the organization’s Actions
+allowance a day. After the build, a leak check confirms that no private commit’s words reached the
+site before anything is published.</p>
+<p><em>What to do:</em> if the ledger’s newest day looks old, open the workflow’s run history. A failed
+scheduled run usually means the token above, or GitHub’s API having a bad moment (the build then
+falls back to the committed snapshot and still publishes).</p>
+<h3 id="-the-hourly-readme-mirror">🪞 The hourly README mirror</h3>
+<p>The portal’s <code>README.md</code> is a copy of the organization profile (<code>theholyearthfoundation/.github</code>),
+refreshed <strong>every hour</strong> by a workflow in the portal repository. GitHub switches off scheduled
+workflows in a public repository after 60 days without activity.</p>
+<p><em>What to do:</em> edit the profile, never the portal’s README. If the copy stops following, re-enable
+the “Mirror org profile README” workflow in the portal’s Actions tab.</p>
+<h3 id="-the-arrival-kit-is-vendored">🧰 The arrival kit is vendored</h3>
+<p>The navbar, the light and motion controls, search, the welcome guide, the contact and community
+windows, the donate page and the map’s cards all come from the <strong>arrival kit</strong>: <code>arrival.js</code> and
+<code>arrival.css</code>, copied into the portal’s <code>arrival/</code> folder, plus this foundation’s own <code>org.js</code>
+(facts and links) and <code>org.css</code> (the Canopy and Morning mist look). The canonical copy lives in
+<a href="https://github.com/drasticstatic/my-template"><code>drasticstatic/my-template</code></a> under
+<code>changelog-template/arrival/</code>. Every org keeps its own copy on purpose, so one org’s change can’t
+break another’s.</p>
+<p><em>What to do:</em> to upgrade, copy the two kit files unchanged from the template, read its porting
+notes, and push the portal <strong>before</strong> this AstroLog, which loads the kit from the portal.</p>
+<h3 id="️-cached-link-previews">🖼️ Cached link previews</h3>
+<p>Every page has its own share image, built with the site: Literata on the canopy’s deep green, with
+the twin vine of sky and gold (Kenney’s teachings show their own medallions, and the Plants &amp;
+Miracles hub shows the flyer’s cover). WhatsApp, iMessage, Telegram, Slack and LinkedIn keep their
+own copy of a link’s preview for days or weeks, so after a share image changes, old previews linger.
+Cards never carry counts, so a cached one doesn’t go stale on its own.</p>
+<p><em>What to do:</em> after changing a card, refresh the important links. The organization’s
+<a href="https://github.com/theholyearthfoundation/.github/blob/main/SOCIAL-PREVIEWS.md"><code>SOCIAL-PREVIEWS.md</code></a>
+says how for each app, and which pages have their own share image.</p>
+<h3 id="-wallet-giving-later">👛 Wallet giving, later</h3>
+<p>The “give with crypto” slot on <a href="https://theholyearthfoundation.github.io/donate/"><code>/donate/</code></a> is empty
+on purpose, and no wallet address is published anywhere. The wallet-connect module that will fill
+it (Reown AppKit, with Web3Auth for email sign-in) only loads on domains its projects allow.</p>
+<p><em>What to do:</em> when it’s switched on, add <code>https://theholyearthfoundation.github.io</code> to the Reown
+project’s domain allowlist and to Web3Auth’s, with a real client ID (never a demo one).</p>
+<h3 id="-links-that-leave-github">🔗 Links that leave GitHub</h3>
+<p>The navbar, the contact and community windows and the
+<a href="https://theholyearthfoundation.github.io/changelog-astro-public/map">map</a> point at iamoneself.com,
+retreats.iamoneself.com and David A’s site (its public preview on <code>drasticstatic.github.io</code>).</p>
+<p><em>What to do:</em> if one of those addresses changes (David’s site moving to a domain of its own, say),
+update the portal’s <code>arrival/org.js</code> (one place for the navbar and windows) and this AstroLog’s map
+(<code>astro/src/data/map.ts</code>) and page cards (<code>astro/src/og/pages.ts</code>).</p>
+<h3 id="-dependencies">📦 Dependencies</h3>
+<p>Astro, Satori and sharp are pinned by <code>package-lock.json</code>, and the workflow installs exactly those
+(<code>npm ci</code>). The share-card fonts (Literata, OFL) are committed, so a build needs no font download.
+PapyrusStd stays on the sites, with its credit, and off the cards. Upgrades are deliberate: update,
+build locally, check the pages and cards, then push.</p>
+<h2 id="who-looks-after-it">Who looks after it</h2>
+<p>Christopher W, with Alfred (Claude Code). Questions go through
+<a href="https://www.iamoneself.com/about-the-speaker">Reach out</a>.</p>
+<p><em>Last reviewed 2026-10-13.</em></p>
+</div></section></main><!-- Every way around, in groups (drawn by the kit from org.js: footer.groups). --><div class="page-foot"><arrival-footer current="sustainability"></arrival-footer></div><footer class="universal-footer"><div class="footer-inner"><span class="footer-brand">The Holy Earth Foundation</span><a href="https://theholyearthfoundation.github.io/"><i class="ph ph-house-simple" aria-hidden="true"></i> <span class="long">Entry </span>Portal</a><a href="/changelog-astro-public/"><i class="ph ph-door-open" aria-hidden="true"></i> Porch</a><a href="/changelog-astro-public/teachings"><i class="ph ph-flower-lotus" aria-hidden="true"></i> Teachings</a><a href="/changelog-astro-public/changelog"><i class="ph ph-clock-counter-clockwise" aria-hidden="true"></i> Changelog</a><a href="/changelog-astro-public/library"><i class="ph ph-books" aria-hidden="true"></i> Library</a><a href="/changelog-astro-public/ledger"><i class="ph ph-scroll" aria-hidden="true"></i> Ledger</a><a href="/changelog-astro-public/map"><i class="ph ph-map-trifold" aria-hidden="true"></i> Map</a><a href="https://theholyearthfoundation.github.io/#community" data-arrival-open="community"><i class="ph ph-users-three" aria-hidden="true"></i> Community</a><a href="https://www.iamoneself.com/about-the-speaker" data-arrival-open="contact"><i class="ph ph-envelope-simple" aria-hidden="true"></i> Reach out</a><a href="https://theholyearthfoundation.github.io/donate/"><i class="ph ph-heart" aria-hidden="true"></i> Donate</a><a href="#welcome" data-arrival-open="guide"><i class="ph ph-signpost" aria-hidden="true"></i> Welcome<span class="long"> guide</span></a><a href="http://www.itcfonts.com" target="_blank" rel="noopener" class="font-credit"><i class="ph ph-text-aa" aria-hidden="true"></i> Headings set in PapyrusStd, Chris Costello / ITC</a></div></footer><!-- Fireflies and the twin vine behind the pointer (one copy, served by the portal); they follow
+         the kit's motion and cursor choices. --><script src="https://theholyearthfoundation.github.io/starfield.js" defer></script></body></html>
