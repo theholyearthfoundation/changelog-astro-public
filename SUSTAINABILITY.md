@@ -30,27 +30,32 @@ tokens) and put a reminder a week before it. To renew, make a new classic token 
 `PUBLIC_REPO_TOKEN`, then run the workflow by hand once (Actions → Sync Public Changelog → Run
 workflow) and check that the [changelog](https://theholyearthfoundation.github.io/changelog-astro-public/changelog) shows the newest entry.
 
-### 🗝️ The ledger's reading token (`LEDGER_TOKEN`): not set yet
+### 🗝️ The ledger's reading token (`LEDGER_TOKEN`)
 
 The [ledger](https://theholyearthfoundation.github.io/changelog-astro-public/ledger) also shows the
 foundation's private work, masked: which repository, which day and what kind of change, never the
-words. To read the private repositories it needs a token that can. The publishing token can't read
-them, so for now the ledger reads this repository with the workflow's own token, and the other
-private rows carry over, still masked, from the last committed snapshot. The page keeps its shape;
-it just stops adding new private rows from elsewhere.
+words. To read the private repositories it needs a token that can; the publishing token can't. If the
+reading token is ever missing, the ledger reads this repository with the workflow's own token, and the
+other private rows carry over, still masked, from the last committed snapshot. The page keeps its
+shape; it just stops adding new private rows from elsewhere.
 
-*What to do (Christopher's to-do):* make a **fine-grained** token, resource owner
-`theholyearthfoundation`, with **read-only "Contents"** on the private repositories the ledger lists
-(`astro/src/data/ledger.config.mjs` → `private`), and add it to `changelog-astro` → Settings → Secrets →
-Actions as `LEDGER_TOKEN`. The workflow prefers it over `PUBLIC_REPO_TOKEN` as soon as it exists.
-It expires like any token: renew it the same way.
+**Set since 2026-10-26:**
+- **The token:** the fine-grained `ledger-read-thef`, resource owner `theholyearthfoundation`.
+- **Reach:** all of the foundation's repositories, with **read-only "Contents"**.
+- **No expiration.** The workflow prefers it over `PUBLIC_REPO_TOKEN`.
+
+*To replace it:* make a new read-only token the same way. Set it on `changelog-astro` → Settings →
+Secrets → Actions as `LEDGER_TOKEN`, piped from the clipboard
+(`pbpaste | gh secret set LEDGER_TOKEN -R theholyearthfoundation/changelog-astro`), and run the
+workflow once by hand.
 
 ### 🗓️ The daily ledger rebuild
 
 So the ledger stays fresh on days nothing else changes, the publishing workflow also runs **every
 day at 10:29 UTC** (`cron: "29 10 * * *"`). It uses a few minutes of the organization's Actions
 allowance a day. After the build, a leak check confirms that no private commit's words reached the
-site before anything is published.
+site before anything is published. The workflow builds on **Node 24** (since 2026-10-26): Astro 7.4
+needs Node 22.23.4 or newer, and a bare `22` resolved to 22.23.3.
 
 *What to do:* if the ledger's newest day looks old, open the workflow's run history. A failed
 scheduled run usually means the token above, or GitHub's API having a bad moment (the build then
