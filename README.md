@@ -65,7 +65,7 @@ who: "Christopher W" # first name + last initial; see PEOPLE in astro/src/lib/pe
 ```
 
 If something can't be described publicly, it just doesn't get an entry — the private technical
-record (each site's own `PENDING-TASKS.md`/`AGENT-SYNC` docs) stays exactly where it already is.
+record (each site's own pending-task and handoff docs) stays exactly where it already is.
 
 ## 💻 Local development
 
