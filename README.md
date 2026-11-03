@@ -1,12 +1,31 @@
+<!-- readme-standard: 2026-11-02 -->
+<div align="center">
+
+<img src="assets/banner.svg" width="100%" alt="The Holy Earth Foundation's changelog and library: a road lights one stop at a time, a stop for each thing shipped.">
+
 # 🌎 The Holy Earth Foundation — Changelog & Library
 
-> A running, public-safe record of what's shipped across The Holy Earth Foundation's sites — plus a
-> growing library of the deeper technical write-ups behind it.
+*A running, public-safe record of what's shipped across the foundation's sites, and the library behind it.*
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-lightgrey?style=flat)](LICENSE)
 [![Live Site](https://img.shields.io/badge/%F0%9F%8C%90%20Live-changelog--astro--public-C99A3A)](https://theholyearthfoundation.github.io/changelog-astro-public/)
 ![Sync: automated](https://img.shields.io/badge/sync-automated-C99A3A)
 [![Built with Claude Code](https://img.shields.io/badge/Built%20with-Claude%20Code%20CLI-blueviolet)](https://code.claude.com/docs/en/overview)
+![For](https://img.shields.io/badge/For-Anyone_who_cares_about_the_work-64748b?style=flat-square)
+
+<img src="assets/icons/map-pin.svg" width="16" height="16" alt=""> **You are here:** The Holy Earth Foundation › source `changelog-astro` (private) → twin `changelog-astro-public` (public) · `main` is the working branch
+
+</div>
+
+## <img src="assets/icons/compass.svg" width="24" height="24" alt=""> TL;DR
+
+1. <img src="assets/icons/sprout.svg" width="16" height="16" alt=""> **What this is.** A plain-language, dated record of what has shipped across [iamoneself.com](https://www.iamoneself.com) and David Amaringo's site, with a `/library` of deeper write-ups. This file is also the live site's homepage.
+2. <img src="assets/icons/users-round.svg" width="16" height="16" alt=""> **Who it is for.** Someone outside the foundation who cares about the work, not the team who already knows the context.
+3. <img src="assets/icons/footprints.svg" width="16" height="16" alt=""> **Do this first.** [Read the live site](https://theholyearthfoundation.github.io/changelog-astro-public/). To add an entry, create `changelog/YYYY-MM-DD-short-slug.md`.
+
+> A running, public-safe record of what's shipped across The Holy Earth Foundation's sites — plus a
+> growing library of the deeper technical write-ups behind it.
+
 
 ---
 
@@ -75,6 +94,10 @@ npm install
 npm run dev
 ```
 
+## <img src="assets/icons/git-pull-request.svg" width="24" height="24" alt=""> Suggest a change
+
+Noticed something? Members can open an [issue](https://github.com/theholyearthfoundation/changelog-astro/issues) or a pull request against `main`; the foundation's stewards read them and a person with the role merges. The source is private, so a visitor sees a 404 there. Not on GitHub? Reach the foundation through [iamoneself.com](https://www.iamoneself.com).
+
 ## 📄 License
 - 💻 **Code:** MIT, see [`LICENSE`](LICENSE)
 - 📝 **Written content** (docs, changelog and library prose, READMEs): CC BY-SA 4.0, see [`LICENSE-CONTENT`](LICENSE-CONTENT) (Isaiah's teaching material is carved out there)
@@ -85,3 +108,5 @@ npm run dev
 *Maintained by [theholyearthfoundation](https://github.com/theholyearthfoundation) · w/ Anthropic's Claude Code CLI*
 
 Co-Authored-By: Alfred · ClaudeCodeCLI · Anthropic [Sonnet-5]
+
+<sub>The front door follows the living [README standard](https://github.com/drasticstatic/my-template/blob/main/README-STANDARD.md). Copy it, improve it.</sub>
